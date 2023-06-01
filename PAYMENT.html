@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<style>
+	input
+	{
+		height: 30px;
+		width: 270px;
+		border-radius: 2px;
+		border-color: #e6e6e6;
+		border-width: 2px;
+	}
+	select
+	{
+		height: 25px;
+		width: 60px;
+		border-radius: 3px;
+	}
+	span
+	{
+		font-size: 20px; 
+	}
+	
+	.center
+	{
+		display: block;
+		margin: auto;
+	}
+	.form
+	{
+
+		font-size: 20px;	
+		display: block;
+		margin: auto;
+  		background-color: white;
+		width: 300px;
+ 		border: 2px solid #e6e6e6;
+ 		border-radius: 5px;
+ 		padding: 50px;
+	}
+</style>
+<body bgcolor="#f8f8f8">
+<div class="form">
+
+	<img style="width: 300px;" src="button\payumoney.png">
+<form>
+
+	<br>
+<div style="font-size: 10px"><center></center></div>
+<br>
+<div style="height: 10px;">Card numbers</div>
+
+<br>
+
+<input type="text" name="number" onblur="fxn(this)" onfocus="fxnn(this)" onkeydown="checkcard(this)"><img style="float: right; display: block;" width="25px" id='card'src="">
+	
+<br>
+
+<br>
+
+<div style="height: 10px;">Name on card</div>
+
+<br>
+
+<input type="text" name="name" onblur="fxn(this)" onfocus="fxnn(this)">
+
+	<br><br>
+<div style="height: 10px;">CVV</div>
+
+<br>
+
+<input type="Password" name="Username" onblur="fxn(this)" onfocus="fxnn(this)">
+
+<br><br>
+
+
+<div style="height: 10px;">Expiry date(month/year)</div>
+<br>
+ <select name="year_start" /> 
+    <option>1</option>       
+    <option>2</option>       
+    <option>3</option>       
+    <option>4</option>       
+    <option>5</option>       
+    <option>6</option>       
+    <option>6</option>       
+    <option>7</option>       
+    <option>8</option>       
+    <option>9</option>      
+    <option>10</option>       
+    <option>11</option>       
+    <option>12</option>       
+     
+  </select>
+
+  <select name="year" /> 
+    <option>2019</option>       
+    <option>2020</option>       
+    <option>2021</option>       
+    <option>2022</option>       
+    <option>2023</option>       
+    <option>2024</option>       
+    <option>2025</option>       
+    <option>2026</option>       
+    <option>2027</option>       
+    <option>2028</option>       
+  </select> 
+
+<br><br>
+
+<button onclick="back()" style="background-color: #25b04b; border-width: 0px; width: 270px; height: 40px ; color: white; border-radius: 5px;border-color: #1eaa46 ;border-width: 2px; font-size: 20px" onmouseover="signinover(this)" onmouseleave="signinleave(this)">Pay</button>
+
+</form>
+
+</div>
+<script>
+	function checkcard(a)
+	{
+		//alert(a.value.length);
+		if(a.value.length==4)
+		{
+			if(a.value=="1111")
+			{
+				var a=document.getElementById('card');
+				a.src="button/visa.png";
+			}
+			else
+			{
+				var a=document.getElementById('card');
+				a.src="button/mastercard.png";
+			}
+		}
+		
+	}
+	function signinover(a)
+	{
+		a.style.backgroundColor="#169738";
+	}
+	function signinleave(a)
+	{
+		a.style.backgroundColor="#25b04b";
+	}
+function back()
+{
+	alert("done!")
+	//alert("length == "+window.history.length);
+	//window.history.go(-2);
+	window.close();
+}
+function fxn1(a)
+{
+	if(a.value=="")
+	{
+		a.style.borderColor="#fe0000";
+		a.style.backgroundImage="url('button/inputbg.jpg')";
+		setTimeout(function(){alert("This column can not be empty")},100);
+	}
+	else
+	{
+		a.style.borderColor="blue";		
+	}
+}
+function fxn(a)
+{
+	if(a.value=="")
+	{
+		a.style.borderColor="#fe0000";
+		a.style.backgroundImage="url('button/inputbg.jpg')";
+		setTimeout(function(){alert("This column can not be empty")},100);}
+	else
+	{
+		a.style.borderColor="#e6e6e6";	
+	}
+}
+function fxnn(a)
+{	
+	a.style.backgroundImage="url('')";
+	a.style.borderColor = "#e6e6e6";
+}	
+</script>
+</body>
+</html>

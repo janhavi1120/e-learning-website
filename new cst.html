@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.top
+	{
+		height: 80px;
+		width: 100%;
+		background-image: url("button/top.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	.course
+	{
+		border-width: 1px;
+		border-radius: 5px;
+		height: 40px;
+		color: #505050;
+		/*background-color: #28a9e0;*/
+		left: 980px;
+		top: 10px;
+		position: relative;
+		font-size: 24px;
+		background-color: white;	
+	}
+	.logo
+	{
+		top: 10px;
+		left: 25px;
+	}
+	.login
+	{
+		height: 40px;
+		font-size: 24px;
+		color: #505050;
+		/*background-color: #28a9e0;*/
+		background-color: white;
+		border-width: 1px;
+		border-radius: 5px;
+		/*border-color: white;
+		*/position: relative;
+		left: 1200px;
+		top: 10px;
+	}
+	.txt
+	{
+		font-size: 20px;
+		color: white;
+		background-color: #28a9e0;
+		border-color: white;
+		position: relative;
+		left: 1100px;
+		top: 25px;
+			
+	}
+	.img1
+	{
+		width: 10%;
+		height: auto;
+	}
+	.pop
+	{
+		border-radius: 9px;
+		height: 50px;
+
+	}
+	.pframe
+	{
+		width: 100%;
+		height: 300px;
+		border-width: 1px;
+		border-radius: 5px;
+		background-color: #eeeef0;
+	}
+</style>
+<body>
+
+<div class='top'> 
+<button value="log" class="login" onmousedown="logtoggle(this)" onmouseover="greycolor(this)" onmouseout="whitecolor(this)" ><span>login</span>
+</button>
+<button class="course" onclick="location.href='courses.html'" onmouseover="greycolor(this)" onmouseout="whitecolor(this)">
+	All courses
+</button>
+</div>
+
+
+<img src="button\picture.jpg">
+<img src="button\pop.jpg" class='pop' id='pop' onclick="pop(this)"><img src="button\onsale1.jpg" class='pop' id='sale' onclick="onsale(this)"><br>
+<iframe src="popular.html" class="pframe" id="1"></iframe>
+<br><br><br>
+<center style="font-size: 28px"> Get placement offer from</center>
+<img src="button\comp.jpg" usemap="#company">
+<map name="company">
+	<area shape="rectangle" coords="24,105,249,157" href="https://en.wikipedia.org/wiki/Amazon_(company)">
+	<area shape="rectangle" coords="269,109,485,190" href="https://careers.google.com/how-we-hire/">
+	<area shape="rectangle" coords="525,90,690,185" href="https://en.wikipedia.org/wiki/Intel">
+	<area shape="rectangle" coords="718,98,1092,190" href="https://en.wikipedia.org/wiki/Nvidia">
+	<area shape="rectangle" coords="1113,111,1306,195" href="https://en.wikipedia.org/wiki/IBM">
+</map>
+<img src="button\soc.jpg" style="float: right; width: 400px;" usemap="#soc">
+<img align="right" src="button\contact us.jpg" height="80px">
+<map name='soc'>
+	<area shape="circle" coords="33,28,25" href="https://www.facebook.com/">
+	<area shape="circle" coords="97,28,25" href="https://twitter.com/login?lang=en">
+	<area shape="circle" coords="156,28,25" href="https://in.pinterest.com/">
+	<area shape="circle" coords="220,28,25" href="https://twitter.com/login?lang=en">
+	<area shape="circle" coords="280,28,25" href="https://www.linkedin.com/feed/">
+	<area shape="circle" coords="342,28,25" href="https://plus.google.com/discover">
+</map>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="font-size: 15px">
+<center>"Elearning" is a registered trademark of Elearning. © 2019 Elearning, Inc.</center>
+<center>Elearning is not an accredited university and we don't confer degrees. Elearning Nanodegree programs are unique educational programs that are not affiliated with any university or </center>
+<center>sanctioned by the University Grants Commission.</center>
+</div>
+<script>
+	var count=0;
+	function logtoggle(a)
+	{
+		if(count%2==0)
+		{
+			window.open('login.html','_blank');
+			a.removeChild(a.firstChild);
+			var b=document.createElement('span');
+			var c=document.createTextNode('logout');
+			b.appendChild(c);
+			a.appendChild(b);
+		}
+		else
+		{
+			a.removeChild(a.childNodes[0]);
+			if(count==1)
+			a.removeChild(a.childNodes[0]);
+			var b=document.createElement('span');
+			var c=document.createTextNode('login');
+			b.appendChild(c);
+			a.appendChild(b);
+		}
+		count++;
+	}
+	function pop(a)
+	{
+		a.src="button/pop.jpg";
+		document.getElementById('1').src='popular.html';
+		document.getElementById('sale').src="button/onsale1.jpg";
+	}
+	function onsale(a)
+	{
+		a.src="button/onsale.jpg";
+		document.getElementById('1').src='onsale.html';
+		document.getElementById('pop').src="button/pop1.jpg";	
+	}
+	function greycolor(a)
+	{
+		a.style.backgroundColor="rgb(242,242,242)";
+	}
+	function whitecolor(a)
+	{
+		a.style.backgroundColor="white";
+	}
+	function login(a)
+	{
+		document.body.removeChild(a);
+		var w=window.open('login.html','_blank');
+		//alert(w.username.value);
+		var c=document.createElement("span");
+		var b=document.createTextNode("Welcome");
+		c.appendChild(b);
+		c.className="txt";
+		document.body.appendChild(c);
+	}
+</script>
+</body>
+</html>

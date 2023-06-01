@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body
+	{
+		background-color: #eeeef0;
+	}
+	img
+	{
+		border-radius: 15px;
+	}
+	select
+	{
+		border-radius: 5px;
+		height: 30px;
+		width: 130px;
+		font-size: 20px;
+		border-width: 1px;
+		border-color: black;
+		background-color: white;
+	}
+	button
+	{
+		font-size: 20px;
+		height: 30px;
+		width: 60px;
+		border-radius: 5px;
+		border-width: 1px;
+		border-color: black;
+		background-color: white;
+	}
+	.ml
+	{
+		background-image: url('button/ml.jpg');
+		background-repeat: no-repeat;
+	}
+	.c
+	{
+		background-image: url('button/c.jpg');
+		background-repeat: no-repeat;
+	}
+	table
+	{
+		/*padding: 100px; padding between  table and window border*/
+		margin-left: auto;/* padding add mrgin to all four sides but do not need padding at top,bottom*/ 
+		margin-right: auto;/*auto automaticaly equal*/
+	}
+</style>
+<body>
+	<select onblur="sort(this)">
+		<option value="4"> Grid(4 cols)</option>	
+		<option value="3"> Grid(3 cols)</option>
+		<option value="2"> Grid(2 cols)</option>	
+		<option value='1'> List </option>
+	</select>
+	<button>sort</button>
+<table cellspacing="20px" cellpadding="10px">
+	<tr>
+		<td> 
+			<a href="ml.html"><img src="button\ml.jpg"></a>
+		</td>
+		<td> 
+			<a href="c.html"><img src="button\c.jpg"></a>
+		</td>
+		<td> 
+			<a href="ai.html"><img src="button\ai.jpg"></a>
+
+		</td>
+		<td> 
+			<a href="c++.html"><img src="button\c++.jpg"></a>
+		</td>   
+	</tr>
+
+	<tr>
+		<td> 
+			<a href="java.html"><img src="button\java.jpg"></a>
+
+		</td>
+		<td> 
+			<a href="python.html"><img src="button\py.jpg"></a>
+
+		</td>
+		<td> 
+			<a href="android.html"><img src="button\and.jpg"></a>
+
+		</td>
+		<td> 
+			<a href="unity.html"><img src="button\unity.jpg"></a>
+		</td>   
+	</tr>
+
+
+	<tr>
+		<td> 
+			<a href="deep.html"><img src="button\dl.jpg"></a>
+
+		</td>
+		<td> 
+			<a href="web.html"><img src="button\webb.jpg"></a>
+		</td>
+	</tr>
+<script>
+	function sort(a)
+	{
+//		alert(typeof(a));
+
+//		alert(typeof(a.value));
+
+//		alert(a.value);
+		fxn(parseInt(a.value));
+	}
+	function fxn(n)
+	{
+		var tb=document.getElementsByTagName('table');
+	//	alert(tb.length);
+//		alert("fxn");
+		var bdy=document.getElementsByTagName('body')[0];
+		var a=document.getElementsByTagName('td');
+//		alert(a.length);
+		var b=document.createElement('table');
+		b.cellSpacing="20px";// S not s
+		b.cellPadding="10px";// P not p
+		while(a.length!=0)
+		{
+			var c=document.createElement('tr');
+			//alert(typeof(a[i]));
+			//for(var i=0;i<3;i++)
+			//{
+			//	if(a.length()==0)
+			//		break;
+				var i=0;
+				while(i<n)
+				{
+					if(a.length==0)
+						break;
+					c.appendChild(a[0]);
+					i++;	
+				}
+				
+	
+			//}
+			b.appendChild(c);
+
+		}	
+		bdy.removeChild(tb[0]);
+		bdy.appendChild(b);	
+	}
+</script>
+</table>
+</body>
+</html>
